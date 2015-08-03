@@ -1,0 +1,45 @@
+{
+  // The plugin looks for a .jshintrc file in the same directory as the source
+  // file you're prettifying (or any directory above if it doesn't exist, or in
+  // your home folder if everything else fails) and uses those options along
+  // the default ones.
+
+  // Details: https://github.com/victorporof/Sublime-JSHint#using-your-own-jshintrc-options
+  // Example: https://github.com/jshint/jshint/blob/master/examples/.jshintrc
+  // Documentation: http://www.jshint.com/docs/options/
+  "browser": true,
+  "esnext": true,
+  "devel": true,
+  "globals": {
+    /* Setting variable to true will allow write, and with false, will be read only, and jshint will warn about a write */
+    "angular": false,
+    "_": false,
+    "module": false,
+    "inject": false,
+    "fit": false,
+    "fdescribe": false,
+    "xdescribe": false,
+    "xit": false,
+    "conveyMockData": true,
+    "conveymockfunctions": true,
+    "conveyFunctions":true,
+    "conveyTemplates":true,
+    "conveyBenchmark":true,
+    "conveyFtHelpers":true,
+    "conveyRPCHelpers":true
+  },
+  "globalstrict": true,
+  "quotmark": true,
+  "undef": true,
+  "unused": true,
+  "jquery": true,
+  "jasmine": true,
+  "indent":2,
+  "nonbsp":true,
+  "forin": true,
+  "funcscope": true,
+  "immed": true,
+  "latedef": true,
+  "newcap": true,
+  "nonbsp": true
+}

@@ -1,0 +1,58 @@
+{
+  "name": "rubikar-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for Rubikar project",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rubikar/rubikar.git"
+  },
+  "keywords": [
+    "rubik"
+  ],
+  "author": "",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/Rubikar/rubikar/issues"
+  },
+  "homepage": "https://github.com/Rubikar/rubikar#readme",
+  "dependencies": {
+    "angular": "1.4.1",
+    "angular-animate": "1.4.1",
+    "angular-aria": "1.4.1",
+    "angular-material": "0.10.0",
+    "angular-mocks": "1.4.1",
+    "angular-resource": "1.4.1",
+    "angular-route": "1.4.1",
+    "grunt": "~0.4.5",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-concat": "~0.5.1",
+    "grunt-contrib-jshint": "~0.11.2",
+    "grunt-contrib-uglify": "~0.9.1",
+    "grunt-jscs": "~1.8.0",
+    "grunt-karma": "~0.11.0",
+    "grunt-processhtml": "~0.3.8",
+    "grunt-rename": "~0.1.4",
+    "istanbul": "~0.3.15",
+    "jasmine-core": "~2.3.4",
+    "jquery": "^2.1.4",
+    "jshint": "~2.8.0",
+    "jshint-stylish": "~2.0.0",
+    "karma": "~0.12.36",
+    "karma-chrome-launcher": "~0.1.12",
+    "karma-coverage": "~0.4.2",
+    "karma-firefox-launcher": "~0.1.6",
+    "karma-html-reporter": "~0.2.6",
+    "karma-html2js-preprocessor": "~0.1.0",
+    "karma-jasmine": "~0.3.5",
+    "karma-json-fixtures-preprocessor": "0.0.4",
+    "karma-junit-reporter": "~0.2.2",
+    "karma-phantomjs-launcher": "~0.2.0",
+    "load-grunt-config": "^0.17.1",
+    "load-grunt-tasks": "^3.2.0",
+    "phantomjs": "~1.9.17",
+    "underscore": "^1.8.3"
+  }
+}

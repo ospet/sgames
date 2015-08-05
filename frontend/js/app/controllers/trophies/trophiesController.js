@@ -9,7 +9,7 @@ angular.module('Rubikar').controller('TrophiesController', ['$scope', '$http', f
   }, function(response) {
     // called asynchronously if an error occurs
     // or server returns response with an error status.
-    console.log('failed');
+    console.log('TrophiesController - godcs call failed');
   });
   
 }])

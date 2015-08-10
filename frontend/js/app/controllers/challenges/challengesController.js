@@ -1,11 +1,10 @@
 'use strict';
-angular.module('Rubikar').controller('ChallengesController', ['$scope', '$http', function ($scope, $http) {
-  $scope.rawjson = '';
-  $http.get('/apigdocs/0By1692QGa-25THlfNlU5Z0lLTE0').
+angular.module('Rubikar').controller('ChallengesController', ['$scope', '$http', 'GDOCS', function ($scope, $http, GDOCS) {
+  $http.get('/apigdocs/' + GDOCS.GDOCS_CHALLENGES).
   then(function(response) {
     $scope.challenges = angular.fromJson(response.data);
   }, function(response) {
-    console.log('ChallengesController - godcs call failed');
+    console.log('ChallengesController - gdocs call failed');
   });
   
 }])

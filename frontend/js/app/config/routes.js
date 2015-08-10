@@ -18,5 +18,13 @@ angular.module('Rubikar').config(['$routeProvider', function ($routeProvider) {
       templateUrl: 'js/app/views/challenges/list.html',
       controller: 'ChallengesController'
     })
+    .when('/races/:racetype', {
+      templateUrl: 'js/app/views/races/race.html',
+      controller: 'RacesController'
+    })
+    .when('/halloffame', {
+      templateUrl: 'js/app/views/halloffame/halloffame.html',
+      controller: 'HallOfFameController'
+    })
     .otherwise({ redirectTo: '/home' });
 }]);

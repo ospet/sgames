@@ -1,7 +1,6 @@
 'use strict';
-angular.module('Rubikar').controller('ActivitiesController', ['$scope', '$http', function ($scope, $http) {
-  $scope.rawjson = '';
-  $http.get('/apigdocs/0By1692QGa-25SFgtbVNsYVo4Mmc').
+angular.module('Rubikar').controller('ActivitiesController', ['$scope', '$http', 'GDOCS', function ($scope, $http, GDOCS) {
+  $http.get('/apigdocs/' + GDOCS.GDOCS_ACTIVITIES).
   then(function(response) {
     $scope.activities = angular.fromJson(response.data);
   }, function(response) {

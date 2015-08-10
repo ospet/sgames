@@ -5,7 +5,7 @@ angular.module('Rubikar').controller('TrophiesController', ['$scope', '$http', f
   then(function(response) {
     $scope.trophies = angular.fromJson(response.data);
   }, function(response) {
-    console.log('TrophiesController - godcs call failed');
+    console.log('TrophiesController - gdocs call failed');
   });
   
 }])

@@ -5,7 +5,7 @@ angular.module('Rubikar').controller('ActivitiesController', ['$scope', '$http',
   then(function(response) {
     $scope.activities = angular.fromJson(response.data);
   }, function(response) {
-    console.log('ActivitiesController - godcs call failed');
+    console.log('ActivitiesController - gdocs call failed');
   });
   
 }])

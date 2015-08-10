@@ -5,7 +5,7 @@ angular.module('Rubikar').controller('ChallengesController', ['$scope', '$http',
   then(function(response) {
     $scope.challenges = angular.fromJson(response.data);
   }, function(response) {
-    console.log('ChallengesController - godcs call failed');
+    console.log('ChallengesController - gdocs call failed');
   });
   
 }])

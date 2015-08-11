@@ -4,7 +4,7 @@ angular.module('Rubikar').controller('HallOfFameController', ['$scope', '$http',
   then(function(response) {
     $scope.hof = angular.fromJson(response.data);
   }, function(response) {
-    console.log(HallOfFameController);
+    console.log('HallOfFameController - gdocs call failed');
   });
   
 }])

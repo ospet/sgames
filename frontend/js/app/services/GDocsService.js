@@ -37,7 +37,7 @@ angular.module('Rubikar').factory('GDocsService',
         }
         return $http.get('/apigdocs/' + gdocid).
         then(function(response) {
-          return = angular.fromJson(response.data);
+          return angular.fromJson(response.data);
         }, function(response) {
           console.log('getRace - gdocs call failed');
           return null;

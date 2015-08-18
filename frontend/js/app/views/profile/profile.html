@@ -1,5 +1,5 @@
 <div class='profile-page'>
-  <div class='title'><h2>{{profile.user}}</h2></div>
+  <div class='title'><h2>{{userdata.firstname}} {{userdata.lastname}}</h2></div>
   <div class='trophies-information'>
     <div class='trophies-showroom'>
       <ul>
@@ -32,6 +32,11 @@
     </div>
     <div class='trophyPersentage'></div>
   </div>
-  <div class='recent-trophies'></div>
-  <div class='recent-activity'></div>
+  <div class='recent-trophies'>
+    <h3>Recent trophies won</h3>
+  </div>
+  <div class='recent-activity'>
+    <h3>Recent activities</h3>
+    <p ng-repeat="activity in activities">{{activity.activity}} &dash; {{activity.category}}</p>
+  </div>
 </div>

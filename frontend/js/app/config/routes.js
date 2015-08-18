@@ -26,5 +26,9 @@ angular.module('Rubikar').config(['$routeProvider', function ($routeProvider) {
       templateUrl: 'js/app/views/halloffame/halloffame.html',
       controller: 'HallOfFameController'
     })
+    .when('/profile/:profileName', {
+      templateUrl: 'js/app/views/profile/profile.html',
+      controller: 'ProfileController'
+    })
     .otherwise({ redirectTo: '/home' });
 }]);

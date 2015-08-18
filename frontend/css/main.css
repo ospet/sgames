@@ -308,3 +308,47 @@ body {
   bottom:0;
   left:0;
 }
+
+img.size-m {
+  height: 180px;
+  width: 180px;
+}
+
+img.size-s {
+  height: 160px;
+  width: 160px;
+}
+
+img.size-xs {
+  height: 140px;
+  width: 140px;
+}
+
+img.size-xxs {
+  height: 120px;
+  width: 120px;
+}
+
+.profile-page {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.profile-page .title h2 {
+
+}
+
+.profile-page .trophies-showroom ul > li {
+  display: inline-block;
+}
+
+.profile-page .trophies-showroom h4 {
+  text-align: center;
+  font-size: 12px;
+}
+
+.profile-page .trophies-showroom p {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}

@@ -106,6 +106,19 @@ angular.module('Rubikar').factory('GDocsService',
           console.log('getPoints - gdocs call failed');
           return null;
         });
+      },
+      /**
+      * Getting the list of all Trophies won by all users in a JSON object
+      * Must be filtered by the caller.
+      */
+      getUsersTrophies: function(){
+        return $http.get('/apigdocs/' + GDOCS.GDOCS_USERS_TROPHIES).
+        then(function(response) {
+          return angular.fromJson(response.data);
+        }, function(response) {
+          console.log('getUsersTrophies - gdocs call failed');
+          return null;
+        });
       }
     };
   }

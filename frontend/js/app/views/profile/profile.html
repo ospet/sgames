@@ -32,11 +32,21 @@
     </div>
     <div class='trophyPersentage'></div>
   </div>
-  <div class='recent-trophies'>
-    <h3>Recent trophies won</h3>
-  </div>
-  <div class='recent-activity'>
-    <h3>Recent activities</h3>
+  
+
+<accordion close-others="oneAtATime">
+  <accordion-group>
+    <accordion-heading>
+    Recent trophies
+    </accordion-heading>
+    <span ng-repeat="trophy in trophies"><img class="size-thumb" src="./img/trophy_{{trophy.medal}}.png" alt="Trophy"> {{trophy.achievement}}</span>
+  </accordion-group>
+  <accordion-group is-open="status.open">
+    <accordion-heading>
+    Recent activities
+    </accordion-heading>
     <p ng-repeat="activity in activities">{{activity.activity}} &dash; {{activity.category}}</p>
-  </div>
+  </accordion-group>
+</accordion>
+
 </div>

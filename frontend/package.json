@@ -26,6 +26,7 @@
     "angular-mocks": "1.4.1",
     "angular-resource": "1.4.1",
     "angular-route": "1.4.1",
+    "angular-ui-bootstrap": "0.13.3",
     "grunt": "~0.4.5",
     "grunt-contrib-clean": "~0.6.0",
     "grunt-contrib-concat": "~0.5.1",

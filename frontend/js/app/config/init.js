@@ -1,1 +1,1 @@
-angular.module('Rubikar', ['ngRoute']);
+angular.module('Rubikar', ['ngRoute', 'ui.bootstrap']);

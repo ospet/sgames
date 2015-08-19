@@ -39,7 +39,7 @@
     <accordion-heading>
     Recent trophies
     </accordion-heading>
-    <span ng-repeat="trophy in trophies"><img class="size-thumb" src="./img/trophy_{{trophy.medal}}.png" alt="Trophy"> {{trophy.achievement}}</span>
+    <p ng-repeat="trophy in trophies"><img class="size-thumb" src="./img/trophy_{{trophy.medal}}.png" alt="Trophy"> {{trophy.achievement}}</p>
   </accordion-group>
   <accordion-group is-open="status.open">
     <accordion-heading>

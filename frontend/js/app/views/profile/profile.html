@@ -45,7 +45,7 @@
     <accordion-heading>
     Recent activities
     </accordion-heading>
-    <p ng-repeat="activity in activities">{{activity.activity}} &dash; {{activity.category}}</p>
+    <p ng-repeat="activity in activities">{{activity.activity}} (x{{activity.quantity}}) &dash; {{activity.category}}: +{{activity.points}} pts</p>
   </accordion-group>
 </accordion>
 

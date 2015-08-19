@@ -10,12 +10,12 @@ angular.module('Rubikar').controller('HomeController', [
     GDocsService.getUsersList().then(function(usersList){
     
       GDocsService.getUsersTrophies().then(function(data){
-        var cachedUser = {user: "", firstname: "", lastname: ""};        
+        var cachedUser = {user: "", firstname: "", lastname: ""}; // the last user found so we do not need to .find always       
         var trophies = _.chain(data)
         .filter(function(value){
           return value.quarter == quarter;
         })
-        .sortBy(function(value) { // this is to get all trophies for the same user together, then caching user names
+        .sortBy(function(value) { // this is to get all trophies for the same user together, then easier to use cached username
           return value.user;
         })
         .each(function(trophy) {
@@ -42,7 +42,7 @@ angular.module('Rubikar').controller('HomeController', [
         .filter(function(value){
           return value.quarter == quarter;
         })
-        .sortBy(function(value) { // this is to get all trophies for the same user together, then caching user names
+        .sortBy(function(value) { // this is to get all activities for the same user together, then easier to use cached username
           return value.user;
         })
         .each(function(activity) {

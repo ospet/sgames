@@ -78,6 +78,47 @@ angular.module('Rubikar').factory('GDocsService',
           console.log('getChallengesList - gdocs call failed');
           return null;
         });
+      },
+      /**
+      * Getting the list of Users in a JSON object
+      * have the following properties:
+      * user, firstname, lastname, role
+      */
+      getUsersList: function(){
+        return $http.get('/apigdocs/' + GDOCS.GDOCS_USERS).
+        then(function(response) {
+          return angular.fromJson(response.data);
+        }, function(response) {
+          console.log('getUsersList - gdocs call failed');
+          return null;
+        });
+      },
+      /**
+      * Getting the list of Points won by users in a JSON object
+      * This is the complete list of activities that all users
+      * have completed. Must be filtered by the caller.
+      */
+      getPoints: function(){
+        return $http.get('/apigdocs/' + GDOCS.GDOCS_POINTS).
+        then(function(response) {
+          return angular.fromJson(response.data);
+        }, function(response) {
+          console.log('getPoints - gdocs call failed');
+          return null;
+        });
+      },
+      /**
+      * Getting the list of all Trophies won by all users in a JSON object
+      * Must be filtered by the caller.
+      */
+      getUsersTrophies: function(){
+        return $http.get('/apigdocs/' + GDOCS.GDOCS_USERS_TROPHIES).
+        then(function(response) {
+          return angular.fromJson(response.data);
+        }, function(response) {
+          console.log('getUsersTrophies - gdocs call failed');
+          return null;
+        });
       }
     };
   }

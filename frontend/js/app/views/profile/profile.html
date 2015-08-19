@@ -1,5 +1,5 @@
 <div class='profile-page'>
-  <div class='title'><h2>{{profile.user}}</h2></div>
+  <div class='title'><h2>{{userdata.firstname}} {{userdata.lastname}}</h2></div>
   <div class='trophies-information'>
     <div class='trophies-showroom'>
       <ul>
@@ -32,6 +32,21 @@
     </div>
     <div class='trophyPersentage'></div>
   </div>
-  <div class='recent-trophies'></div>
-  <div class='recent-activity'></div>
+  
+
+<accordion close-others="oneAtATime">
+  <accordion-group>
+    <accordion-heading>
+    Recent trophies
+    </accordion-heading>
+    <span ng-repeat="trophy in trophies"><img class="size-thumb" src="./img/trophy_{{trophy.medal}}.png" alt="Trophy"> {{trophy.achievement}}</span>
+  </accordion-group>
+  <accordion-group is-open="status.open">
+    <accordion-heading>
+    Recent activities
+    </accordion-heading>
+    <p ng-repeat="activity in activities">{{activity.activity}} &dash; {{activity.category}}</p>
+  </accordion-group>
+</accordion>
+
 </div>

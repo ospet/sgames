@@ -13,3 +13,7 @@ angular.module('Rubikar').constant('GDOCS', {
                                               GDOCS_USERS:          '0By1692QGa-25QmdTaWg0SlVBMzA',
                                               GDOCS_USERS_TROPHIES: '0By1692QGa-25WENWUGlzeTRlWGs'
                                             });
+angular.module('Rubikar').constant('CACHES', {
+                                              HTTP_CACHE:           'SG_HTTP_CACHE',
+                                              HTTP_CACHE_TTL:       1800000  // 30 minutes time to live
+                                            });

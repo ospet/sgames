@@ -1,9 +1,8 @@
 'use strict';
 
-angular.module('Rubikar').factory('GDocsService', 
-[
-  '$http', 'GDOCS', 'RACES', 
-  function($http, GDOCS, RACES){
+angular.module('Rubikar').factory('GDocsService', [
+  '$http', '$q', 'SGHttpCacheService', 'GDOCS', 'RACES', 'CACHES',
+  function($http, $q, SGHttpCacheService, GDOCS, RACES, CACHES){
     return{
       /**
       * Getting the Hall Of Fame in a JSON object
@@ -85,9 +84,22 @@ angular.module('Rubikar').factory('GDocsService',
       * user, firstname, lastname, role
       */
       getUsersList: function(){
+        var cachedUserList = SGHttpCacheService.get("sgames_users");
+        var nowDate = new Date();
+        if ( angular.isDefined(cachedUserList) )
+        {
+          if ( (nowDate.getTime() - cachedUserList.createdOn.getTime()) < CACHES.HTTP_CACHE_TTL )
+          {
+            var deferred = $q.defer();
+            deferred.resolve(cachedUserList.users);
+            return deferred.promise;
+          }
+        }
         return $http.get('/apigdocs/' + GDOCS.GDOCS_USERS).
         then(function(response) {
-          return angular.fromJson(response.data);
+          cachedUserList = {createdOn: new Date(), users: angular.fromJson(response.data)};
+          SGHttpCacheService.put("sgames_users", cachedUserList);
+          return cachedUserList.users;
         }, function(response) {
           console.log('getUsersList - gdocs call failed');
           return null;

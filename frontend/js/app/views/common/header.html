@@ -3,6 +3,12 @@
     <img src="/img/logo.png" alt="S-Games">
   </div>
   <div class="options">
+    <div>
+      <form>
+        <input type="text" ng-model="user.username" placeholder="Username (e.g. pfrias)"/>
+        <a href="#/profile/{{user.username}}">View Profile</a>
+      </form>
+    </div>
     <!-- <div class="button">
       <button><span class="button-arrow">>></span> Sign up</button>
     </div>

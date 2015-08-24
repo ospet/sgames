@@ -15,5 +15,5 @@ angular.module('Rubikar').constant('GDOCS', {
                                             });
 angular.module('Rubikar').constant('CACHES', {
                                               HTTP_CACHE:           'SG_HTTP_CACHE',
-                                              HTTP_CACHE_TTL:       1800000  // 30 minutes time to live
+                                              HTTP_CACHE_TTL:       600000  // 10 minutes time to live
                                             });

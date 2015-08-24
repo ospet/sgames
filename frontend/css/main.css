@@ -301,13 +301,13 @@ body {
   padding-bottom:100px;   /* Height of the footer element */
 }
 
-.footer-container {
+/*.footer-container {
   width:100%;
   height:100px;
   position:absolute;
   bottom:0;
   left:0;
-}
+}*/
 
 img.size-m {
   height: 180px;
@@ -416,8 +416,8 @@ img.size-thumb {
   font-size: 13px;
   color: #606060;
   width:100%;
-  height:116px;
-  position:absolute;
+  height:100px;
+  position:fixed;
   bottom:0;
   left:0;
   background-color: #F7F6F6;
@@ -425,8 +425,8 @@ img.size-thumb {
 }
 
 .footer-container .footer-wrapper {
-  height: 110px;
-  width: 500px;
+  height: 100px;
+  width: 700px;
   margin-right: auto;
   margin-left: auto;
   padding-left: 20px;
@@ -443,9 +443,9 @@ img.size-thumb {
 
 .footer-container .footer-wrapper > div.separator {
   width: 1px;
-  margin-top: 22px;
-  margin-bottom: 22px;
-  height: 60px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 80px;
   border-left: 1px solid #606060;
   padding: 0;
 }
@@ -453,7 +453,7 @@ img.size-thumb {
 .footer-container .footer-wrapper span.vertical-center {
   display: block;
   vertical-align: middle;
-  margin-top: 45px;
+  margin-top: 25px;
 }
 
 .footer-container p, .footer-container a {
@@ -464,4 +464,9 @@ img.size-thumb {
 .footer-container a, .footer-container a:visited {
   color:#1464F6;
   text-decoration: none;
+}
+
+.footer-container .footer-wrapper p {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
 }

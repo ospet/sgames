@@ -3,6 +3,7 @@ angular.module('Rubikar').constant('RACES', {
                                               RACE_QA:      'qa',
                                             });
 angular.module('Rubikar').constant('GDOCS', {
+                                              API_URL:              'apigdocsv2/',
                                               GDOCS_CHALLENGES:     '0By1692QGa-25THlfNlU5Z0lLTE0',
                                               GDOCS_ACTIVITIES:     '0By1692QGa-25SFgtbVNsYVo4Mmc',
                                               GDOCS_POINTS:         '0By1692QGa-25RzlpclJ1ZEt2NkU',

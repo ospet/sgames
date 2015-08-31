@@ -1,0 +1,25 @@
+{
+  "name": "sgames-backend",
+  "version": "1.0.0",
+  "description": "Backend for SGames project",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rubikar/sgames.git"
+  },
+  "keywords": [
+    "rubik"
+  ],
+  "author": "Gonzalo Mercado, Olivier Spet",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/Rubikar/sgames/issues"
+  },
+  "homepage": "https://github.com/Rubikar/sgames#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "underscore": "^1.8.3"
+  }
+}

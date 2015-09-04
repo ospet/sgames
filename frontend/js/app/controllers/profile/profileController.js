@@ -13,6 +13,15 @@ angular.module('Rubikar').controller('ProfileController', [
       $scope.profile = _.find(data, function(value){
         return value.user == $scope.profileName;
       });
+      $scope.userNbOfTrophies = 0;
+      if ( angular.isDefined($scope.profile) )
+      {
+        $scope.userNbOfTrophies = $scope.profile.bronze + $scope.profile.silver + $scope.profile.gold + $scope.profile.platinum + $scope.profile.adamantium;
+      }
+      GDocsService.getTrophiesList().then(function(data){
+        var alltrophies = data;
+        $scope.userTrophiesPercent = Math.floor($scope.userNbOfTrophies / alltrophies.length * 100);
+      });
     });
     
     GDocsService.getUsersList().then(function(data){

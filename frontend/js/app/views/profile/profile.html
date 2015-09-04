@@ -30,7 +30,13 @@
         </li>
       </ul>
     </div>
-    <div class='trophyPersentage'></div>
+    <div class='trophyPercentage'>
+      <div class="progress">
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{userTrophiesPercent}}" aria-valuemin="0" aria-valuemax="100" style="width:{{userTrophiesPercent}}%">
+          {{userTrophiesPercent}}%
+        </div>
+      </div>
+    </div>
   </div>
   
 

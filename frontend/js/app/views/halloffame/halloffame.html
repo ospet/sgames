@@ -1,20 +1,26 @@
-<div class="table-responsive">
-  <table class="table table-striped">
-    <tr>
-      <th>User</th>
-      <th>Adamantium</th>
-      <th>Platinum</th>
-      <th>Gold</th>
-      <th>Silver</th>
-      <th>Bronze</th>
-    </tr>
-    <tr ng-repeat="entry in hof">
-      <td><a href="#/profile/{{entry.user}}">{{entry.user}}</a></td>
-      <td>{{entry.adamantium}}</td>
-      <td>{{entry.platinum}}</td>
-      <td>{{entry.gold}}</td>
-      <td>{{entry.silver}}</td>
-      <td>{{entry.bronze}}</td>
-    </tr>
-  </table>
+<div class='container-fluid'>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <tr>
+            <th>User</th>
+            <th>Adamantium</th>
+            <th>Platinum</th>
+            <th>Gold</th>
+            <th>Silver</th>
+            <th>Bronze</th>
+          </tr>
+          <tr ng-repeat="entry in hof">
+            <td><a href="#/profile/{{entry.user}}">{{entry.user}}</a></td>
+            <td>{{entry.adamantium}}</td>
+            <td>{{entry.platinum}}</td>
+            <td>{{entry.gold}}</td>
+            <td>{{entry.silver}}</td>
+            <td>{{entry.bronze}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>

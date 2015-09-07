@@ -1,14 +1,20 @@
-<div class="table-responsive">
-  <table class="table table-striped">
-    <tr>
-      <th>Rank</th>
-      <th>User</th>
-      <th>Points</th>
-    </tr>
-    <tr ng-repeat="racer in racers">
-      <td>{{racer.rank}}</td>
-      <td><a href="#/profile/{{racer.user}}">{{racer.user}}</a></td>
-      <td>{{racer.points}}</td>
-    </tr>
-  </table>
+<div class='container-fluid'>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <tr>
+            <th>Rank</th>
+            <th>User</th>
+            <th>Points</th>
+          </tr>
+          <tr ng-repeat="racer in racers">
+            <td>{{racer.rank}}</td>
+            <td><a href="#/profile/{{racer.user}}">{{racer.user}}</a></td>
+            <td>{{racer.points}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>

@@ -31,7 +31,7 @@ angular.module('Rubikar').controller('ProfileController', [
     });
     
     GDocsService.getUsersTrophies().then(function(data){
-      var trophies = _.chain(data)
+      $scope.trophies = _.chain(data)
       .filter(function(value){
         return (value.user == $scope.profileName && value.quarter == quarter);
       })
@@ -40,7 +40,16 @@ angular.module('Rubikar').controller('ProfileController', [
       })
       .reverse()
       .value();
-      $scope.trophies = trophies;
+      
+      $scope.userAllTimeTrophies = _.chain(data)
+      .filter(function(value){
+        return (value.user == $scope.profileName);
+      })
+      .sortBy(function(value) {
+        return value.quarter;
+      })
+      .reverse()
+      .value();
     });
     
     GDocsService.getPoints().then(function(data){

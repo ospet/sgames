@@ -1,12 +1,18 @@
-<div class="table-responsive">
-  <table class="table table-striped">
-    <tr>
-      <th>Challenge</th>
-      <th>Medal</th>
-    </tr>
-    <tr ng-repeat="challenge in challenges">
-      <td>{{challenge.challenge}}</td>
-      <td>{{challenge.medal}}</td>
-    </tr>
-  </table>
+<div class='container-fluid'>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <tr>
+            <th>Challenge</th>
+            <th>Medal</th>
+          </tr>
+          <tr ng-repeat="challenge in challenges">
+            <td>{{challenge.challenge}}</td>
+            <td>{{challenge.medal}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>

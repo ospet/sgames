@@ -1,16 +1,22 @@
-<div class="table-responsive">
-  <table class="table table-striped">
-    <tr>
-      <th>Trophy</th>
-      <th>Description</th>
-      <th>Category</th>
-      <th>Medal</th>
-    </tr>
-    <tr ng-repeat="trophy in trophies">
-      <td>{{trophy.trophy}}</td>
-      <td>{{trophy.description}}</td>
-      <td>{{trophy.category}}</td>
-      <td>{{trophy.medal}}</td>
-    </tr>
-  </table>
+<div class='container-fluid'>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <tr>
+            <th>Trophy</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Medal</th>
+          </tr>
+          <tr ng-repeat="trophy in trophies">
+            <td>{{trophy.trophy}}</td>
+            <td>{{trophy.description}}</td>
+            <td>{{trophy.category}}</td>
+            <td>{{trophy.medal}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>

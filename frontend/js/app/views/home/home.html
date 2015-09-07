@@ -1,6 +1,12 @@
-<div>
-  <h4>Recent trophies</h4>
-  <p ng-repeat="trophy in trophies"><img class="size-thumb" src="./img/trophy_{{trophy.medal}}.png" alt="Trophy"/><a href="#/profile/{{trophy.user}}">{{trophy.firstname}} {{trophy.lastname}}</a>: {{trophy.achievement}}</p>
-  <h4>Recent activities</h4>
-  <p ng-repeat="activity in activities"><a href="#/profile/{{activity.user}}">{{activity.firstname}} {{activity.lastname}}</a>: {{activity.activity}} (x{{activity.quantity}}) &dash; {{activity.category}}: +{{activity.points}} pts</p>
+<div class='container-fluid'>
+  <div class="row">
+    <div class="col-sm-6">
+      <h4>Recent trophies</h4>
+      <p ng-repeat="trophy in trophies"><img class="size-thumb" src="./img/trophy_{{trophy.medal}}.png" alt="Trophy"/><a href="#/profile/{{trophy.user}}">{{trophy.firstname}} {{trophy.lastname}}</a>: {{trophy.achievement}}</p>
+    </div>
+    <div class="col-sm-6">
+      <h4>Recent activities</h4>
+      <p ng-repeat="activity in activities"><a href="#/profile/{{activity.user}}">{{activity.firstname}} {{activity.lastname}}</a>: {{activity.activity}} (x{{activity.quantity}}) &dash; {{activity.category}}: +{{activity.points}} pts</p>
+    </div>
+  </div>
 </div>

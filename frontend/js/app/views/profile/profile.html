@@ -75,6 +75,12 @@
               </accordion-heading>
               <p ng-repeat="trophy in trophies"><img class="size-thumb" src="./img/trophy_{{trophy.medal}}.png" alt="Trophy"> {{trophy.achievement}}</p>
             </accordion-group>
+            <accordion-group>
+              <accordion-heading>
+              All time trophies
+              </accordion-heading>
+              <p ng-repeat="trophy in userAllTimeTrophies"><img class="size-thumb" src="./img/trophy_{{trophy.medal}}.png" alt="Trophy"> {{trophy.achievement}}</p>
+            </accordion-group>
           </accordion>
         </div>
         <div class="col-sm-6">

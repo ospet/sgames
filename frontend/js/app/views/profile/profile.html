@@ -1,7 +1,7 @@
-<div class='profile-page'>
-  <div class='title'><h2>{{userdata.firstname}} {{userdata.lastname}}</h2></div>
-  <div class='trophies-information'>
-    <div class='trophies-showroom'>
+<div class='container'>
+  <div class='title row'><h2>{{userdata.firstname}} {{userdata.lastname}}</h2></div>
+  <div class='row profile-page'>
+    <div class='col-md-10 trophies-showroom'>
       <ul>
         <li>
           <img class="size-xxs" src="./img/trophy_bronze.png" alt="Bronze trophy">
@@ -30,29 +30,41 @@
         </li>
       </ul>
     </div>
-    <div class='trophyPercentage'>
-      <div class="progress">
-        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{userTrophiesPercent}}" aria-valuemin="0" aria-valuemax="100" style="width:{{userTrophiesPercent}}%">
-          {{userTrophiesPercent}}%
-        </div>
+    <div class='col-md-2'>
+    </div>
+  </div>
+  <div class='row'>
+    <div class="progress">
+      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{userTrophiesPercent}}" aria-valuemin="0" aria-valuemax="100" style="width:{{userTrophiesPercent}}%">
+        {{userTrophiesPercent}}%
       </div>
     </div>
   </div>
   
+  <div class="row">
+    <div class="col-md-6">
+      <h4>Trophies</h4>
+      <accordion close-others="true">
+        <accordion-group is-open="true">
+          <accordion-heading>
+          Recent trophies
+          </accordion-heading>
+          <p ng-repeat="trophy in trophies"><img class="size-thumb" src="./img/trophy_{{trophy.medal}}.png" alt="Trophy"> {{trophy.achievement}}</p>
+        </accordion-group>
+      </accordion>
+    </div>
+    <div class="col-md-6">
+      <h4>Activities</h4>
+      <accordion close-others="true">
+        <accordion-group is-open="true">
+          <accordion-heading>
+          Recent activities
+          </accordion-heading>
+          <p ng-repeat="activity in activities">{{activity.activity}} (x{{activity.quantity}}) &dash; {{activity.category}}: +{{activity.points}} pts</p>
+        </accordion-group>
+      </accordion>
+    </div>
+  </div>
 
-<accordion close-others="oneAtATime">
-  <accordion-group>
-    <accordion-heading>
-    Recent trophies
-    </accordion-heading>
-    <p ng-repeat="trophy in trophies"><img class="size-thumb" src="./img/trophy_{{trophy.medal}}.png" alt="Trophy"> {{trophy.achievement}}</p>
-  </accordion-group>
-  <accordion-group is-open="status.open">
-    <accordion-heading>
-    Recent activities
-    </accordion-heading>
-    <p ng-repeat="activity in activities">{{activity.activity}} (x{{activity.quantity}}) &dash; {{activity.category}}: +{{activity.points}} pts</p>
-  </accordion-group>
-</accordion>
 
 </div>

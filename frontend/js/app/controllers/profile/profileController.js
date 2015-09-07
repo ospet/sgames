@@ -54,6 +54,18 @@ angular.module('Rubikar').controller('ProfileController', [
       .reverse()
       .value();
       $scope.activities = activities;
+      $scope.userPoints = 0;
+      _.each(activities, function(activity) {
+        $scope.userPoints += activity.points;
+      });
+      $scope.userAllTimePoints = 0;
+      _.chain(data)
+      .filter(function(value){
+        return (value.user == $scope.profileName);
+      })
+      .each(function(activity) {
+        $scope.userAllTimePoints += activity.points;
+      });
     });
   }
 ]);

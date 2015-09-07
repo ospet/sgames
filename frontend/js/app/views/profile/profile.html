@@ -1,70 +1,93 @@
-<div class='container'>
-  <div class='title row'><h2>{{userdata.firstname}} {{userdata.lastname}}</h2></div>
-  <div class='row profile-page'>
-    <div class='col-md-10 trophies-showroom'>
-      <ul>
-        <li>
-          <img class="size-xxs" src="./img/trophy_bronze.png" alt="Bronze trophy">
-          <h4>Bronze</h4>
-          <p>{{profile.bronze}}</p>
-        </li>
-        <li>
-          <img class="size-xs" src="./img/trophy_silver.png" alt="Silver trophy">
-          <h4>Silver</h4>
-          <p>{{profile.silver}}</p>
-        </li>
-        <li>
-          <img class="size-s" src="./img/trophy_gold.png" alt="Gold Trophy">
-          <h4>Gold</h4>
-          <p>{{profile.gold}}</p>
-        </li>
-        <li>
-          <img class="size-m" src="./img/trophy_platinum.png" alt="Platinum Trophy">
-          <h4>Platinum</h4>
-          <p>{{profile.platinum}}</p>
-        </li>
-        <li>
-          <img class="size-l" src="./img/trophy_adamantium.png" alt="Adamantium Trophy">
-          <h4>Adamantium</h4>
-          <p>{{profile.adamantium}}</p>
-        </li>
-      </ul>
-    </div>
-    <div class='col-md-2'>
-    </div>
-  </div>
-  <div class='row'>
-    <div class="progress">
-      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{userTrophiesPercent}}" aria-valuemin="0" aria-valuemax="100" style="width:{{userTrophiesPercent}}%">
-        {{userTrophiesPercent}}%
+<div class='container-fluid'>
+  <div class="row profile-page">
+    <div class='col-sm-10 col-sm-offset-1'>
+      <div class='row'>
+        <div class="col-md-12">
+          <h2 class="profilename">{{userdata.firstname}} {{userdata.lastname}}</h2>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col-md-2 col-sm-3 col-xs-6 trophies-showroom'>
+          <div>
+            <img class="size-s" src="./img/trophy_bronze.png" alt="Bronze trophy">
+            <h4>Bronze</h4>
+            <p>{{profile.bronze}}</p>
+          </div>
+        </div>
+        <div class='col-md-2 col-sm-3 col-xs-6 trophies-showroom'>
+          <div>
+            <img class="size-s" src="./img/trophy_silver.png" alt="Silver trophy">
+            <h4>Silver</h4>
+            <p>{{profile.silver}}</p>
+          </div>
+        </div>
+        <div class='col-md-2 col-sm-3 col-xs-6 trophies-showroom'>
+          <div>
+            <img class="size-s" src="./img/trophy_gold.png" alt="Gold Trophy">
+            <h4>Gold</h4>
+            <p>{{profile.gold}}</p>
+          </div>
+        </div>
+        <div class='col-md-2 col-sm-3 col-xs-6 trophies-showroom'>
+          <div>
+            <img class="size-s" src="./img/trophy_platinum.png" alt="Platinum Trophy">
+            <h4>Platinum</h4>
+            <p>{{profile.platinum}}</p>
+          </div>
+        </div>
+        <div class='col-md-2 col-sm-3 col-xs-6 trophies-showroom'>
+          <div>
+            <img class="size-s" src="./img/trophy_adamantium.png" alt="Adamantium Trophy">
+            <h4>Adamantium</h4>
+            <p>{{profile.adamantium}}</p>
+          </div>
+        </div>
+        <div class='col-md-2 col-sm-3 col-xs-6 trophies-showroom'>
+          <div>
+            <p class="points"><span>{{userPoints}} pts</span> this quarter</h5>
+            <p class="points"><span>{{userAllTimePoints}} pts</span> all time</h5>
+          </div>
+        </div>
+      </div>
+      <div class='row'>
+        <div class="col-sm-8 col-sm-offset-2">
+          <h4>Trophies progress</h4>
+          <div class="progress">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{userTrophiesPercent}}" aria-valuemin="0" aria-valuemax="100" style="width:{{userTrophiesPercent}}%">
+              {{userTrophiesPercent}}%
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-sm-12">
+          <h3 class="profiledetails">Profile details</h3>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-sm-6">
+          <accordion close-others="true">
+            <accordion-group is-open="true">
+              <accordion-heading>
+              Recent trophies
+              </accordion-heading>
+              <p ng-repeat="trophy in trophies"><img class="size-thumb" src="./img/trophy_{{trophy.medal}}.png" alt="Trophy"> {{trophy.achievement}}</p>
+            </accordion-group>
+          </accordion>
+        </div>
+        <div class="col-sm-6">
+          <accordion close-others="true">
+            <accordion-group is-open="true">
+              <accordion-heading>
+              Recent activities
+              </accordion-heading>
+              <p ng-repeat="activity in activities">{{activity.activity}} (x{{activity.quantity}}) &dash; {{activity.category}}: +{{activity.points}} pts</p>
+            </accordion-group>
+          </accordion>
+        </div>
       </div>
     </div>
   </div>
-  
-  <div class="row">
-    <div class="col-md-6">
-      <h4>Trophies</h4>
-      <accordion close-others="true">
-        <accordion-group is-open="true">
-          <accordion-heading>
-          Recent trophies
-          </accordion-heading>
-          <p ng-repeat="trophy in trophies"><img class="size-thumb" src="./img/trophy_{{trophy.medal}}.png" alt="Trophy"> {{trophy.achievement}}</p>
-        </accordion-group>
-      </accordion>
-    </div>
-    <div class="col-md-6">
-      <h4>Activities</h4>
-      <accordion close-others="true">
-        <accordion-group is-open="true">
-          <accordion-heading>
-          Recent activities
-          </accordion-heading>
-          <p ng-repeat="activity in activities">{{activity.activity}} (x{{activity.quantity}}) &dash; {{activity.category}}: +{{activity.points}} pts</p>
-        </accordion-group>
-      </accordion>
-    </div>
-  </div>
-
-
 </div>

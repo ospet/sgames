@@ -339,11 +339,11 @@ img.size-thumb {
   padding-right: 20px;
 }
 
-.profile-page .title h2 {
-
+.profile-page h2.profilename, .profile-page h3.profiledetails {
+  text-align: center;
 }
 
-.profile-page .trophies-showroom ul > li {
+.profile-page .trophies-showroom div {
   display: inline-block;
 }
 
@@ -352,10 +352,24 @@ img.size-thumb {
   font-size: 12px;
 }
 
+.profile-page .trophies-showroom h5 {
+  text-align: center;
+  font-size: 16px;
+}
+
 .profile-page .trophies-showroom p {
   text-align: center;
   font-size: 22px;
   font-weight: bold;
+}
+
+.profile-page .trophies-showroom p.points {
+  text-align: left;
+  font-size: 16px;
+}
+
+.profile-page .trophies-showroom p.points span {
+  font-size: 22px;
 }
 
 

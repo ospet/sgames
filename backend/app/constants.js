@@ -19,10 +19,10 @@ define("GDOCS_USERS_TROPHIES", '0By1692QGa-25WENWUGlzeTRlWGs');
 
 define("GDOCS_CHALLENGES_TTL", 86400);
 define("GDOCS_ACTIVITIES_TTL", 86400);
-define("GDOCS_POINTS_TTL", 1800);
+define("GDOCS_POINTS_TTL", 900);
 define("GDOCS_TROPHIES_TTL", 86400);
-define("GDOCS_RACE_DEV_TTL", 3600);
-define("GDOCS_RACE_QA_TTL", 3600);
+define("GDOCS_RACE_DEV_TTL", 900);
+define("GDOCS_RACE_QA_TTL", 900);
 define("GDOCS_HALL_OF_FAME_TTL", 86400);
 define("GDOCS_USERS_TTL", 40000);
 define("GDOCS_USERS_TROPHIES_TTL", 3600);
@@ -41,7 +41,7 @@ define("GDOCS", [
                   {
                     "key": "GDOCS_POINTS",
                     "gid": "0By1692QGa-25RzlpclJ1ZEt2NkU",
-                    "ttl": 1800000
+                    "ttl": 900000
                   },
                   {
                     "key": "GDOCS_TROPHIES",
@@ -51,12 +51,12 @@ define("GDOCS", [
                   {
                     "key": "GDOCS_RACE_DEV",
                     "gid": "0By1692QGa-25eWhJSk1xaXB0V2M",
-                    "ttl": 3600000
+                    "ttl": 900000
                   },
                   {
                     "key": "GDOCS_RACE_QA",
                     "gid": "0By1692QGa-25MGYzS19oa0lHTjQ",
-                    "ttl": 3600000
+                    "ttl": 900000
                   },
                   {
                     "key": "GDOCS_HALL_OF_FAME",

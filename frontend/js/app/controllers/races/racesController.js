@@ -8,8 +8,12 @@ angular.module('Rubikar').controller('RacesController', ['$scope', '$routeParams
         var matchedUser = _.find(usersList, function(elt) {
           return elt.user == racer.user;
         });
-        racer.firstname = matchedUser.firstname;
-        racer.lastname = matchedUser.lastname;
+        racer.firstname = racer.user;
+        racer.lastname = '';
+        if ( angular.isDefined(matchedUser) ) {
+          racer.firstname = matchedUser.firstname;
+          racer.lastname = matchedUser.lastname;
+        }
       });
     });
   });

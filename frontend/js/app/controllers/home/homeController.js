@@ -27,12 +27,18 @@ angular.module('Rubikar').controller('HomeController', [
                 return elt.user == trophy.user;
               });
             }
-            trophy.firstname = cachedUser.firstname;
-            trophy.lastname = cachedUser.lastname;
+            trophy.firstname = trophy.user;
+            trophy.lastname = '';
+            if ( angular.isDefined(cachedUser) ) {
+              trophy.firstname = cachedUser.firstname;
+              trophy.lastname = cachedUser.lastname;
+            }
             var matchedTrophy = _.find(allTrophies, function(elt) {
               return elt.trophy == trophy.achievement;
             });
-            trophy.description = matchedTrophy.description;
+            trophy.description = '';
+            if ( angular.isDefined(matchedTrophy) )
+              trophy.description = matchedTrophy.description;
           })
           .sortBy(function(value) {
             return value.month;

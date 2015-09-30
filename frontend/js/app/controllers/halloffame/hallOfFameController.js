@@ -7,8 +7,12 @@ angular.module('Rubikar').controller('HallOfFameController', ['$scope', 'GDocsSe
         var matchedUser = _.find(usersList, function(elt) {
           return elt.user == hentry.user;
         });
-        hentry.firstname = matchedUser.firstname;
-        hentry.lastname = matchedUser.lastname;
+        hentry.firstname = hentry.user;
+        hentry.lastname = '';
+        if ( angular.isDefined(matchedUser) ) {
+          hentry.firstname = matchedUser.firstname;
+          hentry.lastname = matchedUser.lastname;
+        }
       });
     });
   });

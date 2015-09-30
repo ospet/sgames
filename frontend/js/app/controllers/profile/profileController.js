@@ -30,27 +30,41 @@ angular.module('Rubikar').controller('ProfileController', [
       });
     });
     
-    GDocsService.getUsersTrophies().then(function(data){
-      $scope.trophies = _.chain(data)
-      .filter(function(value){
-        return (value.user == $scope.profileName && value.quarter == quarter);
-      })
-      .sortBy(function(value) {
-        return value.month;
-      })
-      .reverse()
-      .value();
-      
-      $scope.userAllTimeTrophies = _.chain(data)
-      .filter(function(value){
-        return (value.user == $scope.profileName);
-      })
-      .sortBy(function(value) {
-        return value.quarter;
-      })
-      .reverse()
-      .value();
+    GDocsService.getTrophiesList().then(function(alltroph){
+      var allTrophies = alltroph;
+      GDocsService.getUsersTrophies().then(function(data){
+        // adding the description to each trophy
+        // to be used as tooltip
+        var userTrophies = _.chain(data)
+        .filter(function(value){
+          return (value.user == $scope.profileName);
+        })
+        .each(function(trophy){
+          var matchedTrophy = _.find(allTrophies, function(elt) {
+            return elt.trophy == trophy.achievement;
+          });
+          trophy.description = matchedTrophy.description;
+        });
+        
+        $scope.trophies = _.chain(userTrophies)
+        .filter(function(value){
+          return (value.quarter == quarter);
+        })
+        .sortBy(function(value) {
+          return value.month;
+        })
+        .reverse()
+        .value();
+        
+        $scope.userAllTimeTrophies = _.chain(userTrophies)
+        .sortBy(function(value) {
+          return value.quarter;
+        })
+        .reverse()
+        .value();
+      });
     });
+    
     
     GDocsService.getPoints().then(function(data){
       var activities = _.chain(data)

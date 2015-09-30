@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-sm-6">
       <h4>Recent trophies</h4>
-      <p ng-repeat="trophy in trophies"><img class="size-thumb" src="./img/trophy_{{trophy.medal}}.png" alt="Trophy"/><a href="#/profile/{{trophy.user}}">{{trophy.firstname}} {{trophy.lastname}}</a>: {{trophy.achievement}}</p>
+      <p ng-repeat="trophy in trophies"><img class="size-thumb" src="./img/trophy_{{trophy.medal}}.png" alt="Trophy" tooltip="{{trophy.description}}" tooltip-placement="right"/><a href="#/profile/{{trophy.user}}">{{trophy.firstname}} {{trophy.lastname}}</a>: <span tooltip="{{trophy.description}}">{{trophy.achievement}}</span></p>
     </div>
     <div class="col-sm-6">
       <h4>Recent activities</h4>

@@ -3,6 +3,8 @@ var https = require("https");
 var constants = require("./constants");
 var _ = require("underscore")
 
+var refreshIntervals = {};
+
 function updateJsonFile(fileid) {
   var jsonFile = "../" + constants.JSON_DIR + "/" + fileid + ".json";
   var jsonContent = "";
@@ -38,12 +40,16 @@ function updateJsonFile(fileid) {
 Refresh all json files that are used in the API
 */
 function refreshGDocs() {
+  _.each(Object.keys(refreshIntervals), function(key){
+    clearInterval(refreshIntervals[key]);
+  });
+
   _.each(constants.GDOCS, function(gdoc) {
-    console.log("Initializing " + gdoc.key);
+    console.log("Refreshing " + gdoc.key);
     // update gdoc on init
     updateJsonFile(gdoc.gid);
     // call for update periodically
-    setInterval( function() {
+    refreshIntervals[gdoc.key] = setInterval( function() {
       console.log('Calling for update ' + gdoc.key );
       updateJsonFile(gdoc.gid);
     }, gdoc.ttl);

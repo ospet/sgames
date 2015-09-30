@@ -43,7 +43,9 @@ angular.module('Rubikar').controller('ProfileController', [
           var matchedTrophy = _.find(allTrophies, function(elt) {
             return elt.trophy == trophy.achievement;
           });
-          trophy.description = matchedTrophy.description;
+          trophy.description = '';
+          if ( angular.isDefined(matchedTrophy) )
+            trophy.description = matchedTrophy.description;
         });
         
         $scope.trophies = _.chain(userTrophies)
